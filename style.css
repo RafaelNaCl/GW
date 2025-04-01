@@ -191,3 +191,22 @@ footer {
     opacity: 1;
   }
 }
+/* ================================
+   Ginko Frame-Animation
+================================ */
+.blatt-animation {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.blatt-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
