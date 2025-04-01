@@ -86,3 +86,29 @@ nav ul li a:hover {
     transform: translateY(0);
   }
 }
+/* Startseite Styling */
+.startbild {
+  background-image: url('bilder/ginko-animiert.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
+}
+
+.animiertes-blatt {
+  width: 120px;
+  animation: growLeaf 3s ease forwards;
+  margin: 1rem auto;
+}
+
+@keyframes growLeaf {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
