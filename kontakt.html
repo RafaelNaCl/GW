@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="bilder/favicon.png" type="image/png">
-  <title>Kontakt – graffeoweber</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – graffeoweber.ch</title>
+  <link rel="icon" href="bilder/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <p>Schreib mir gern eine Nachricht an:<br>
-    <a href="mailto:dein.name@mail.ch">dein.name@mail.ch</a>
-  </p>
+
+  <section class="intro">
+    <h1>Kontaktiere uns</h1>
+    <p>Hier kannst du uns eine Nachricht hinterlassen.</p>
+
+    <nav aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="ueber.html">Über</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <main class="main-content">
+    <section class="content-section">
+      <form>
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+
+        <label for="email">E-Mail:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="nachricht">Nachricht:</label><br />
+        <textarea id="nachricht" name="nachricht" rows="6" required></textarea><br /><br />
+
+        <button type="submit">Absenden</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 graffeoweber.ch</p>
+  </footer>
+
 </body>
 </html>

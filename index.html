@@ -2,55 +2,63 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <title>graffeoweber.ch</title>
   <link rel="icon" href="bilder/favicon.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Introbereich mit Logo und Navigation -->
   <section class="intro">
     <img src="bilder/ginko-animiert.png" alt="Ginkoblatt Animation" class="ginko-logo" />
     <h1>Willkommen auf graffeoweber.ch</h1>
     <p>Diese Seite wurde am iPad erstellt.</p>
 
-    <nav>
+    <nav aria-label="Hauptnavigation">
       <ul>
+        <li><a href="kontakt.html">Kontakt</a></li>
         <li><a href="#shiba">Shiba</a></li>
         <li><a href="#kalender">Kalender</a></li>
         <li><a href="#namensgebung">Namensgebung</a></li>
         <li><a href="#galerie">Galerie</a></li>
-        <li><a href="#weltkarte">Weltkarte</a></li>
+        <li><a href="#weltenerbauerinnen">Weltenerbauer:innen</a></li>
       </ul>
     </nav>
   </section>
 
-  <main>
-    <section id="shiba">
+  <!-- Hauptinhalte -->
+  <main class="main-content">
+    <section id="shiba" class="content-section">
       <h2>Shiba</h2>
       <p>Hier kommt bald alles über den Shiba Inu.</p>
     </section>
 
-    <section id="kalender">
+    <section id="kalender" class="content-section">
       <h2>Kalender</h2>
       <p>Hier wird ein Kalender eingebunden.</p>
     </section>
 
-    <section id="namensgebung">
+    <section id="namensgebung" class="content-section">
       <h2>Namensgebung</h2>
       <p>Infos zur Namensgebung werden hier stehen.</p>
     </section>
 
-    <section id="galerie">
+    <section id="galerie" class="content-section">
       <h2>Galerie</h2>
       <p>Eine Sammlung von Bildern wird folgen.</p>
     </section>
 
-    <section id="weltkarte">
-      <h2>Weltkarte</h2>
-      <p>Hier entsteht eine interaktive Weltkarte.</p>
+    <section id="weltenerbauerinnen" class="content-section">
+      <h2>Weltenerbauer:innen</h2>
+      <p>Hier entsteht ein Bereich mit Ginkowelt und Weltkarte.</p>
     </section>
   </main>
+
+  <!-- Footer vorbereiten -->
+  <footer>
+    <p>&copy; 2025 graffeoweber.ch</p>
+  </footer>
 
 </body>
 </html>
