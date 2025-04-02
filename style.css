@@ -216,3 +216,8 @@ footer {
   opacity: 0;
   transition: opacity 0.15s linear;
 }
+
+.blatt-frame {
+  opacity: 1 !important;
+  border: 1px solid red;
+}
