@@ -1,22 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const frames = document.querySelectorAll(".blatt-frame");
-  const delay = 180; // Millisekunden zwischen den Frames
+  const totalFrames = 9;
+  let currentFrame = 1;
 
-  function showFrame(index) {
-    // Alle ausblenden
-    frames.forEach((frame) => (frame.style.opacity = "0"));
+  const interval = setInterval(() => {
+    document.querySelectorAll(".blatt-frame").forEach((frame, index) => {
+      frame.style.opacity = index + 1 === currentFrame ? "1" : "0";
+    });
 
-    // Aktuelles anzeigen
-    if (frames[index]) {
-      frames[index].style.opacity = "1";
+    currentFrame++;
+
+    if (currentFrame > totalFrames) {
+      clearInterval(interval);
     }
-
-    // Nächsten Frame vorbereiten
-    if (index + 1 < frames.length) {
-      setTimeout(() => showFrame(index + 1), delay);
-    }
-  }
-
-  // Start
-  showFrame(0);
+  }, 180);
 });
