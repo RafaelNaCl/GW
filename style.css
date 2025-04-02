@@ -198,14 +198,13 @@ footer {
 }
 
 /* ================================
-   Ginko Frame-Animation
+   Ginko Frame-Animation (Fix)
 ================================ */
 .blatt-animation {
   position: relative;
   width: 160px;
   height: 160px;
   margin: 0 auto 1.5rem auto;
-  z-index: 10;
 }
 
 .blatt-frame {
@@ -215,7 +214,11 @@ footer {
   width: 160px;
   height: 160px;
   opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.blatt-frame.active {
+  opacity: 1;
   z-index: 10;
 }

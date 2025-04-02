@@ -8,10 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function animateFrames() {
     if (current < totalFrames) {
-      frames[current].style.opacity = 1;
-
-      if (current > 0) {
-        frames[current - 1].style.opacity = 0;
+      frames.forEach(f => f.classList.remove("active")); // Alle Frames unsichtbar
+      if (frames[current]) {
+        frames[current].classList.add("active"); // Aktuellen Frame aktiv setzen
       }
 
       current++;
