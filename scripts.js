@@ -1,21 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
   const frames = document.querySelectorAll(".blatt-frame");
-  let currentFrame = 0;
+  const delay = 180; // Millisekunden zwischen den Frames
 
-  const interval = setInterval(() => {
-    // Alle Frames ausblenden
-    frames.forEach(frame => frame.style.opacity = "0");
+  function showFrame(index) {
+    // Alle ausblenden
+    frames.forEach((frame) => (frame.style.opacity = "0"));
 
-    // Nächsten Frame einblenden
-    if (frames[currentFrame]) {
-      frames[currentFrame].style.opacity = "1";
+    // Aktuelles anzeigen
+    if (frames[index]) {
+      frames[index].style.opacity = "1";
     }
 
-    currentFrame++;
-
-    // Stoppen, wenn alle durch sind
-    if (currentFrame >= frames.length) {
-      clearInterval(interval);
+    // Nächsten Frame vorbereiten
+    if (index + 1 < frames.length) {
+      setTimeout(() => showFrame(index + 1), delay);
     }
-  }, 180); // 180ms pro Frame
+  }
+
+  // Start
+  showFrame(0);
 });
