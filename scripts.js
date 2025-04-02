@@ -1,17 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
   const frames = document.querySelectorAll(".blatt-frame");
+  const totalFrames = frames.length;
   let current = 0;
 
-  function showNextFrame() {
-    frames.forEach((f, i) => {
-      f.style.opacity = i === current ? "1" : "0";
-    });
+  // Initialzustand: alle ausblenden
+  frames.forEach(frame => frame.style.opacity = 0);
 
-    current++;
-    if (current < frames.length) {
-      setTimeout(showNextFrame, 180);
+  function animateFrames() {
+    if (current < totalFrames) {
+      frames[current].style.opacity = 1;
+
+      if (current > 0) {
+        frames[current - 1].style.opacity = 0;
+      }
+
+      current++;
+      setTimeout(animateFrames, 180);
     }
   }
 
-  showNextFrame();
+  animateFrames(); // Start der Animation
 });
