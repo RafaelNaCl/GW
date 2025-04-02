@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const interval = setInterval(() => {
     // Alle Frames auf 0 setzen
     document.querySelectorAll(".blatt-frame").forEach(frame => {
-      frame.style.opacity = 0;
+      frame.style.opacity = "0";
     });
 
     // Aktuelles Frame anzeigen
     const activeFrame = document.querySelector('.frame' + currentFrame);
     if (activeFrame) {
-      activeFrame.style.opacity = 1;
+      activeFrame.style.opacity = "1";
     }
 
     currentFrame++;
