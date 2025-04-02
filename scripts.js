@@ -1,3 +1,4 @@
+console.log("DOM vollständig geladen");
 document.addEventListener("DOMContentLoaded", () => {
   const frames = document.querySelectorAll(".blatt-frame");
   const totalFrames = frames.length;
@@ -7,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   frames.forEach(frame => frame.style.opacity = 0);
 
   function animateFrames() {
+    console.log("Animation gestartet");
     if (current < totalFrames) {
       frames.forEach(f => f.classList.remove("active")); // Alle Frames unsichtbar
       if (frames[current]) {
