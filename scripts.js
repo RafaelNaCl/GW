@@ -3,13 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentFrame = 1;
 
   const interval = setInterval(() => {
-    if (currentFrame <= totalFrames) {
-      document.querySelectorAll(".blatt-frame").forEach((el, index) => {
-        el.style.opacity = (index + 1 === currentFrame) ? 1 : 0;
-      });
-      currentFrame++;
-    } else {
+    document.querySelectorAll(".blatt-frame").forEach((el, index) => {
+      if (index + 1 === currentFrame) {
+        el.style.opacity = 1;
+        el.style.border = "2px solid red"; // Aktiv: roter Rahmen
+      } else {
+        el.style.opacity = 0;
+        el.style.border = "none"; // Inaktiv: kein Rahmen
+      }
+    });
+
+    currentFrame++;
+    if (currentFrame > totalFrames) {
       clearInterval(interval);
     }
-  }, 180); // ca. 1.6 Sekunden
+  }, 180); // ~1.6 Sekunden
 });
