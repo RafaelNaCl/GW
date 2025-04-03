@@ -219,6 +219,6 @@ footer {
 }
 
 .blatt-frame.active {
-  opacity: 1;
+  opacity: 1; !important
   z-index: 10;
 }
