@@ -1,40 +1,35 @@
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
   const frames = document.querySelectorAll(".blatt-frame");
-  const totalFrames = frames.length;
-  let current = 0;
-  let loadedCount = 0;
+  let currentFrame = 0;
 
-  // Warte, bis alle Bilder geladen sind
-  frames.forEach((img) => {
-    if (img.complete) {
-      loadedCount++;
+  // Funktion zur Anzeige des aktuellen Frames
+  function showFrame() {
+    frames.forEach((frame, index) => {
+      frame.style.opacity = index === currentFrame ? 1 : 0;
+    });
+    currentFrame++;
+    if (currentFrame < frames.length) {
+      setTimeout(showFrame, 180); // Zeigt jeden Frame für 180ms
+    }
+  }
+
+  // Überprüfen, ob alle Bilder geladen sind
+  let loadedImages = 0;
+  frames.forEach((frame) => {
+    if (frame.complete) {
+      loadedImages++;
     } else {
-      img.onload = () => {
-        loadedCount++;
-        if (loadedCount === totalFrames) {
-          startAnimation();
+      frame.onload = () => {
+        loadedImages++;
+        if (loadedImages === frames.length) {
+          showFrame(); // Startet die Animation, wenn alle Bilder geladen sind
         }
       };
     }
   });
 
-  // Falls alle schon im Cache sind
-  if (loadedCount === totalFrames) {
-    startAnimation();
+  // Falls alle Bilder bereits geladen sind (z.B. aus dem Cache)
+  if (loadedImages === frames.length) {
+    showFrame();
   }
-
-  function startAnimation() {
-    function showNextFrame() {
-      frames.forEach(f => f.classList.remove("active"));
-      if (frames[current]) {
-        frames[current].classList.add("active");
-      }
-      current++;
-      if (current < totalFrames) {
-        setTimeout(showNextFrame, 180);
-      }
-    }
-
-    setTimeout(showNextFrame, 200); // kleiner Startpuffer
-  }
-};
+});
