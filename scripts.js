@@ -1,11 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
   const frames = document.querySelectorAll(".blatt-frame");
   const totalFrames = frames.length;
   let current = 0;
 
   console.log("Frames gefunden:", totalFrames);
 
-  function animateFrames() {
+  function showNextFrame() {
     frames.forEach(f => f.classList.remove("active"));
     if (frames[current]) {
       frames[current].classList.add("active");
@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     current++;
     if (current < totalFrames) {
-      setTimeout(animateFrames, 180);
+      setTimeout(showNextFrame, 180);
     }
   }
 
-  animateFrames();
-});
+  setTimeout(showNextFrame, 200); // kleiner Puffer
+};
