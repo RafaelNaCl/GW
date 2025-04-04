@@ -15,12 +15,10 @@
 ================================ */
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: var(--background);
-  color: var(--text-main);
-}
-body {
-  padding-top: 100px;
+  padding-top: 80px; /* Platz für Sticky Navigation */
+  background-color: #f2fff8;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 /* ================================
@@ -213,11 +211,15 @@ footer {
 /* ================================
    Ginko Frame-Animation (Fix)
 ================================ */
+
 .blatt-animation {
-  position: relative;
+  margin-top: 1rem;
   width: 160px;
   height: 160px;
-  margin: 0 auto 2rem auto;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 5;
 }
 
 .blatt-frame {
@@ -234,4 +236,39 @@ footer {
 .blatt-frame.active {
   opacity: 1;
   z-index: 10;
+}
+/* Sticky Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #e9f7ef; /* dein hellgrüner Ton */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 1rem 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li a {
+  text-decoration: none;
+  background-color: #b0eac8;
+  color: #114b35;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+nav li a:hover {
+  background-color: #92dcb1;
 }
