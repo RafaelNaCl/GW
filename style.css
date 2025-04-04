@@ -40,6 +40,13 @@
 }
 
 /* BODYPARTS */
+
+/* Entfernt jegliche Standardabstände vom Browser */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   padding: 0; /* ← kein Abstand oben/links */
