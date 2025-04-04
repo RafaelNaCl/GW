@@ -13,12 +13,13 @@
 .intro {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-  animation: fadeIn 2s ease-in-out;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  text-align: left;
 }
+
 
 .ginko-logo {
   width: 150px;
