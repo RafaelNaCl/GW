@@ -4,10 +4,7 @@ window.onload = () => {
   let current = 0;
 
   function showFrame() {
-    frames.forEach((frame, index) => {
-      frame.classList.remove("active");
-    });
-
+    frames.forEach(f => f.classList.remove("active"));
     if (frames[current]) {
       frames[current].classList.add("active");
       current++;
@@ -17,7 +14,6 @@ window.onload = () => {
     }
   }
 
-  // Starte Animation nur, wenn ALLE Bilder geladen sind
   let loaded = 0;
   frames.forEach(img => {
     if (img.complete) {
