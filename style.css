@@ -19,6 +19,9 @@ body {
   background-color: var(--background);
   color: var(--text-main);
 }
+body {
+  padding-top: 100px;
+}
 
 /* ================================
    Intro Hero-Bereich
@@ -77,6 +80,16 @@ nav ul li a {
 
 nav ul li a:hover {
   background-color: var(--ginko-green-hover);
+}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #e9f7ef; /* Helles Grün, passend zum Stil */
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  text-align: center;
 }
 
 /* ================================
@@ -204,7 +217,7 @@ footer {
   position: relative;
   width: 160px;
   height: 160px;
-  margin: 0 auto 1.5rem auto;
+  margin: 0 auto 2rem auto;
 }
 
 .blatt-frame {
