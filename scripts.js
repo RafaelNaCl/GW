@@ -4,31 +4,17 @@ window.onload = () => {
   let current = 0;
 
   function showFrame() {
-    frames.forEach(f => f.classList.remove("active"));
-    if (frames[current]) {
-      frames[current].classList.add("active");
-      current++;
-      if (current < totalFrames) {
-        setTimeout(showFrame, 180);
-      }
-    }
+    frames.forEach((f, i) => {
+      f.classList.remove("active");
+    });
+    frames[current].classList.add("active");
+
+    current = (current + 1) % totalFrames;
+
+    // Zufälligeres Timing zwischen 180–300ms
+    const nextDelay = 180 + Math.random() * 120;
+    setTimeout(showFrame, nextDelay);
   }
 
-  let loaded = 0;
-  frames.forEach(img => {
-    if (img.complete) {
-      loaded++;
-    } else {
-      img.onload = () => {
-        loaded++;
-        if (loaded === totalFrames) {
-          showFrame();
-        }
-      };
-    }
-  });
-
-  if (loaded === totalFrames) {
-    showFrame();
-  }
+  showFrame();
 };
